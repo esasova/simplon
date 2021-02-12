@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <title>Motivation</title>
+</head>
+<body>
+    <div class="app">
+        <section id="raisonGrp">
+        <h1>Pourquoi {{candidateName}} ?</h1>
+        <button @click="giveReason">Vraiment, pourquoi ?</button>
+        <h2 id="raison"></h2>
+        <img id="image" src="images/pourquoi.jpg" alt="Lena">
+        </section>
+    
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '.app',
+            data: {
+                candidateName: 'Elena',
+                a: 0,
+                reasons: [
+                    {
+                        title: 'Je suis très motivée',
+                        image: {
+                            source: 'images/motivee.jpeg',
+                            alt: 'motivée'
+                        }
+                    },
+                    {
+                        title: 'Et très organisée',
+                        image: {
+                            source: 'images/organiser.jpg',
+                            alt: 'organisation'
+                        }
+                    },
+                    {
+                        title: 'J\'apprends vite',
+                        image: {
+                            source: 'images/apprendre.jpg',
+                            alt: 'apprendre'
+                        }
+                    },
+                    {
+                        title: 'Je travaille bien en équipe',
+                        image: {
+                            source: 'images/equipe.jpeg',
+                            alt: 'equipe'
+                        }
+                    },
+                    {
+                        title: 'Je n\'ai pas peur de travail',
+                        image: {
+                            source: 'images/travail.jpg',
+                            alt: 'travail'
+                        }
+                    },
+                    {
+                        title: 'J\'ai le sens du partage',
+                        image: {
+                            source: 'images/partage.jpg',
+                            alt: 'partage'
+                        }
+                    },
+                    {
+                        title: 'J\'adore coder',
+                        image: {
+                            source: 'images/coder.jpg',
+                            alt: 'coder'
+                        }
+                    },
+                    {
+                        title: 'J\'adhère aux valeurs de Simplon',
+                        image: {
+                            source: 'images/simplon.jpg',
+                            alt: 'valuers'
+                        }
+                    },
+                    {
+                        title: 'Je fais de bons cookies',
+                        image: {
+                            source: 'images/cookies.jpg',
+                            alt: 'cookies'
+                        }
+                    },
+                    {
+                        title: 'Et voilà !',
+                        image: {
+                            source: 'images/voila.jpg',
+                            alt: 'acrobranche'
+                        }
+                    }
+                ]
+            },
+            methods: {
+                    giveReason(){
+                            let image = document.getElementById('image');
+                            let raison = document.getElementById ('raison');
+                            raison.innerHTML = '';
+                            image.innerHTML = '';
+                            raison.textContent = this.reasons[this.a].title;
+                            image.src = this.reasons[this.a].image.source;
+                            image.alt = this.reasons[this.a].image.alt;
+                            if(this.a < this.reasons.length){
+                                this.a++
+                            } else {
+                                this.a = 0;
+                            }
+                            }
+                        
+                    }
+                }
+        )
+    </script>
+</body>
+</html>

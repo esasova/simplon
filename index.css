@@ -1,0 +1,25 @@
+img{
+    width: 30%;
+    height: 30%;
+}
+#raisonGrp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #246A73;
+}
+h1{
+    font-size: 4em;
+    text-align: center;
+}
+h2 {
+    font-size: 2em;
+}
+body{
+    font-family: 'Monserrat', sans-serif;
+    background-color: #f0f2d5;
+}
+button{
+    background-color: #CADBC8;
+    
+}
